@@ -1,0 +1,137 @@
+<body>
+<div class="main">
+    <div class="whole_box" id="general_situation">
+        <div class="head">
+            <img [src]="pic3"><p>资源概况</p>
+            <div class="clear"></div>
+            <hr>
+        </div>
+        <div class="content" id="content1">
+            <div class="sub_content">
+                <div class="chart" id="bar1"></div>
+                <div class="illustration">
+                    <p class="inner_title">CPU</p>
+                    <p class="inner_content">占用：70%</p>
+                    <p class="inner_content">空闲：30%</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="sub_content">
+                <div class="chart" id="bar2"></div>
+                <div class="illustration">
+                    <p class="inner_title">内存</p>
+                    <p class="inner_content">占用：65%</p>
+                    <p class="inner_content">空闲：35%</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="sub_content">
+                <div class="chart" id="bar3"></div>
+                <div class="illustration">
+                    <p class="inner_title">硬盘</p>
+                    <p class="inner_content">占用：60%</p>
+                    <p class="inner_content">空闲：40%</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div class="whole_box" id="VM">
+            <div class="head">
+                <img [src]="pic3"><p>虚拟机</p>
+                <div class="clear"></div>
+                <hr>
+            </div>
+            <div class="content" id="content2">
+                <img src="data/img/logo2.png"/>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>CPU</th>
+                        <th>内存</th>
+                        <th>硬盘</th>
+                        <th>地址</th>
+                        <th>镜像</th>
+                        <th>状态</th>
+                    </tr>
+                    </thead>
+                    <tr *ngFor="let item of vmlist">
+                        <td>{{item.name}}</td>
+                        <td>{{item.cpu}}</td>
+                        <td>{{item.memory}}</td>
+                        <td>{{item.disk}}</td>
+                        <td>{{item.ip}}</td>
+                        <td>{{item.image}}</td>
+                        <td>{{item.status}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="whole_box" id="deal_VM">
+            <div class="head">
+                <img [src]="pic3"><p>虚拟机操作</p>
+                <div class="clear"></div>
+                <hr>
+            </div>
+            <div class="content" id="content3">
+                <div id="creat">
+                    <p>创建</p>
+                    <div id="creat_form">
+                        <table>
+                            <tr>
+                                <td>名称:<input type="text" id="Name" [(ngModel)]="creat_form.name"/></td>
+                                <td>CPU:<input type="text" id="Cpu" [(ngModel)]="creat_form.cpu"/></td>
+                            </tr>
+                            <tr>
+                                <td>内存:<input type="text" id="Memory" [(ngModel)]="creat_form.memory"/></td>
+                                <td>硬盘:<input type="text" id="Disk" [(ngModel)]="creat_form.disk"/></td>
+                            </tr>
+                        </table>
+                        <div class="content3_down">
+                <span>
+                      镜像:
+                      <select name="Mirror" id="Mirror" class="switch" [(ngModel)]="creat_form.image">
+                        <option [value]="item" *ngFor="let item of mirror_image">{{item}}</option>
+                      </select>
+                </span>
+                        </div>
+                        <div class="content3_down">
+                            <button id="establish_but" (click)="submit();">建立</button>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="delete">
+                    <p>删除</p>
+                    <div class="content3_down" id="delete_span">
+              <span>
+                选择虚拟机：
+                <select name="DeleteVm" id="DeleteVm" class="switch" [(ngModel)]="delete_vm">
+                  <option [value]="item" *ngFor="let item of delete_name_list">{{item}}</option>
+
+                </select>
+              </span>
+                    </div>
+                    <div class="content3_down">
+                        <button id="delete_but" (click)="del();">删除</button>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

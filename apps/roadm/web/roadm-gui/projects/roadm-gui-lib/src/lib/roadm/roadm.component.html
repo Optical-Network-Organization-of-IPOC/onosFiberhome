@@ -52,24 +52,69 @@
 
 <!--pengfei-->
 <body>
-    <div class="bigbox">
-        <input type="checkbox" id="checkbox">
-        <label for="checkbox">
-            <img [src]="picUrl1" alt="Function" />
-        </label>
-        <ul>
-            <li id="column1"><img [src]="picUrl" alt="1" /></li>
-            <li><a routerLink="home" ><img [src]="picUrl2" alt="2" /><span>Home</span></a></li>
-            <li><a routerLink="topology"><img [src]="picUrl3" alt="3" /><span>Topology</span></a></li>
-            <li><a routerLink="resource"><img [src]="picUrl4" alt="4" /><span>Resource</span></a></li>
-            <li><a href="#"><img [src]="picUrl5" alt="5" /><span>Service</span></a></li>
-            <li><a routerLink="application"><img [src]="picUrl6" alt="6" /><span>Application</span></a></li>
-            <li><a href="#"><img [src]="picUrl7" alt="7" /><span>Journal</span></a></li>
-        </ul>
-        <div>
-            <router-outlet></router-outlet>
-        </div>
+<div class="bigbox">
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox">
+        <img [src]="picUrl1" alt="Function" />
+    </label>
+    <ul id="main_nav">
+        <li id="column1" class="nav"><img [src]="picUrl" alt="1" /></li>
+        <li class="nav">
+            <div class="parent_nav">
+                <a routerLink="home" ><img [src]="picUrl2" alt="2" /><span>主页</span></a>
+            </div>
+        </li>
+        <li class="nav">
+            <div class="parent_nav">
+                <a (click)="reveal1=!reveal1;"><img [src]="picUrl3" alt="3" /><span>拓扑</span></a>
+            </div>
+            <div *ngIf="reveal1">
+                <ul class="sub_nav">
+                    <li><a routerLink="topology"><span>虚拟仿真</span></a></li>
+                    <li><a routerLink="topology/auxiliary"><span>半实物仿真</span></a></li>
+                    <li><a routerLink="topology/xinjiang"><span>电力网络</span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav">
+            <div class="parent_nav">
+                <a (click)="reveal2=!reveal2;"><img [src]="picUrl5" alt="4" /><span>云资源</span></a>
+            </div>
+            <div *ngIf="reveal2">
+                <ul class="sub_nav">
+                    <li><a routerLink="fiberhome1"><span>烽火云 1</span></a></li>
+                    <li><a><span>烽火云 2</span></a></li>
+                    <li><a><span>华科云</span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav">
+            <div class="parent_nav">
+                <a href="#" (click)="reveal3=!reveal3;"><img [src]="picUrl4" alt="5" /><span>网资源</span></a>
+            </div>
+            <div *ngIf="reveal3">
+                <ul class="sub_nav">
+                    <li><a href="https://www.baidu.com/" target="_blank"><span>DCN</span></a></li>
+                    <li><a><span>DCI</span></a></li>
+                    <li><a><span>虚拟节点</span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav">
+            <div class="parent_nav">
+                <a routerLink="application"><img [src]="picUrl6" alt="6" /><span>应用</span></a>
+            </div>
+        </li>
+        <li class="nav">
+            <div class="parent_nav">
+                <a href="#"><img [src]="picUrl7" alt="7" /><span>日志</span></a>
+            </div>
+        </li>
+    </ul>
+    <div class="export">
+        <router-outlet></router-outlet>
     </div>
+</div>
 
 </body>
 

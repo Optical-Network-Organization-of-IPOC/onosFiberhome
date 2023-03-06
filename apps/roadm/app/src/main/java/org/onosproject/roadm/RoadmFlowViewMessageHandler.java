@@ -32,11 +32,23 @@ import org.onosproject.net.flow.FlowRuleService;
 import org.onosproject.ui.RequestHandler;
 import org.onosproject.ui.UiConnection;
 import org.onosproject.ui.UiMessageHandler;
+
 import org.onosproject.ui.table.TableModel;
 import org.onosproject.ui.table.TableRequestHandler;
 import org.onosproject.ui.table.cell.HexLongFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.*;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -64,6 +76,7 @@ public class RoadmFlowViewMessageHandler extends UiMessageHandler {
     private static final String ROADM_CREATE_FLOW_REQ = "roadmCreateFlowRequest";
     private static final String ROADM_CREATE_FLOW_RESP = "roadmCreateFlowResponse";
 
+    private static final String USER_AGENT = "Mozilla/5.0";
     private static final String ROADM_SHOW_ITEMS_REQ = "roadmShowFlowItemsRequest";
     private static final String ROADM_SHOW_ITEMS_RESP = "roadmShowFlowItemsResponse";
 
@@ -84,6 +97,19 @@ public class RoadmFlowViewMessageHandler extends UiMessageHandler {
     private static final String ATTENUATION = "attenuation";
     private static final String HAS_ATTENUATION = "hasAttenuation";
     private static final String CHANNEL_FREQUENCY = "channelFrequency";
+
+    //定义触发数据类型
+    private static final String HI_SGP_RESP = "hiResponse";
+    private static final String THERECEIVE = "receive message";
+
+    public String theName;
+    public String theCpu;
+    public String theMemory;
+    private static final String HELLOWORLD_REQQQ = "helloworldRequest123";
+    private static final String NAME1 = "name1";
+    private static final String CPU = "cpu";
+    private static final String MEMORY = "memory";
+
 
     private static final String[] COLUMN_IDS = {
             ID, FLOW_ID, APP_ID, GROUP_ID, TABLE_ID, PRIORITY, TIMEOUT,
@@ -112,9 +138,42 @@ public class RoadmFlowViewMessageHandler extends UiMessageHandler {
                 new SetAttenuationRequestHandler(),
                 new DeleteConnectionRequestHandler(),
                 new CreateConnectionRequestHandler(),
-                new CreateShowItemsRequestHandler()
+                new CreateShowItemsRequestHandler(),
+                new SayHelloWorld()
         );
     }
+
+
+
+    private final class SayHelloWorld extends RequestHandler {
+        private SayHelloWorld(){super(HELLOWORLD_REQQQ);}
+
+        @Override
+        public void process(ObjectNode payload) {
+            theName = string(payload,NAME1);
+            theCpu = string(payload,CPU);
+            theMemory = string(payload,MEMORY);
+            log.info("wrtre");
+            log.info("TheName is :{}", theName);
+            log.info("TheCpu is:{}", theCpu);
+            log.info("TheMemory is:{}", theMemory);
+
+            String theResponse = "hi sgp";
+            ObjectNode test = objectNode();
+            test.put(THERECEIVE, theResponse);
+            sendMessage(HI_SGP_RESP, test);
+            String s = "";
+            try {
+                s = sendPost();
+                log.info("The result of get is:{}", s);
+            }catch(Exception e){
+                log.info("The result of get is:{}", s);
+                e.printStackTrace();
+            }
+        }
+    }
+
+
 
     // Handler for sample table requests
     private final class FlowTableDataRequestHandler extends TableRequestHandler {
@@ -426,4 +485,206 @@ public class RoadmFlowViewMessageHandler extends UiMessageHandler {
             sendMessage(ROADM_SHOW_ITEMS_RESP, node);
         }
     }
+
+    private static String sendGet() throws Exception {
+
+        String url = "https://10.190.85.44:8774/v2.1/servers";
+        ignoreSsl(); //跳过https验证
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        //默认值我GET
+        con.setRequestMethod("GET");
+
+        //添加请求头
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("X-Auth-Token", "gAAAAABj9c1vJNCgGc4LDh6llIZRS4KOo_-nEFbHDnFajIgNSnS2d9sKC_VtWdQLRakSh8QT2T5OeZP_P8jG_DpDUmbLrKr__6IBcYWq13H8e-1sQdAFKm_o9rf0D8WDfI3z3WC4mNBaSp5omAn9Frwbh-FhTuKxh2DY4nAYrggzSeQBfAk6-KY");
+
+        int responseCode = con.getResponseCode();
+        System.out.println("\nSending 'GET' request to URL : " + url);
+        System.out.println("Response Code : " + responseCode);
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        //打印结果
+        System.out.println(response.toString());
+        return response.toString();
+    }
+
+    private static String sendPost() throws Exception {
+
+        String url = "https://10.190.85.44:8774/v2.1/servers";
+        ignoreSsl();
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+
+        //添加请求头
+        con.setRequestMethod("POST");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("X-Auth-Token", "gAAAAABj9c_8RuDg_GLhbLEOGjRVpTMHQMuMbRtuQ-VZ3X8iQ2YExYLj526LVyPCIR6i1WWzMPACKwXvUT2CEVsQI7dqNCW6T2DBTVzomo7Gr-xi02d87g2JolPd_asOjTTWgv8a83SSR9F2KwpDNyfhotWBVoqdFRlx-pAsNqJ-G2AApCKoD4M");
+        con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+        con.setRequestProperty("Content-Type", "application/json");
+
+        String urlParameters = "{\n" +
+                "    \"server\": {\n" +
+                "        \"accessIPv4\": \"1.2.3.4\",\n" +
+                "        \"accessIPv6\": \"80fe::\",\n" +
+                "        \"name\": \"show-test2-2023-2-22\",\n" +
+                "        \"imageRef\": \"8113da59-e608-40ab-a7e9-d4191127dc88\",\n" +
+                "        \"flavorRef\": \"4U8G100G\",\n" +
+                "        \"networks\": [\n" +
+                "            {\n" +
+                "                \"uuid\": \"8a98c674-bea1-423f-a671-b4a64da0b3a9\"\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"availability_zone\": \"nova\",\n" +
+                "        \"OS-DCF:diskConfig\": \"AUTO\",\n" +
+                "        \"metadata\": {\n" +
+                "            \"My Server Name\": \"Apache1\"\n" +
+                "        },\n" +
+                "        \"personality\": [\n" +
+                "            {\n" +
+                "                \"path\": \"/etc/banner.txt\",\n" +
+                "                \"contents\": \"ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA==\"\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"security_groups\": [\n" +
+                "            {\n" +
+                "                \"name\": \"default\"\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"user_data\": \"IyEvYmluL2Jhc2gKL2Jpbi9zdQplY2hvICJJIGFtIGluIHlvdSEiCg==\"\n" +
+                "    }\n" +
+                "}";
+
+        //发送Post请求
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        int responseCode = con.getResponseCode();
+        System.out.println("\nSending 'POST' request to URL : " + url);
+        System.out.println("Post parameters : " + urlParameters);
+        System.out.println("Response Code : " + responseCode);
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        //打印结果
+        System.out.println(response.toString());
+        return response.toString();
+    }
+
+    private static String sendDCIGetInfo() throws Exception {
+
+        String url = "https://10.190.85.44:8774/v2.1/servers";
+        ignoreSsl();
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+
+        //添加请求头
+        con.setRequestMethod("POST");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("X-Auth-Token", "gAAAAABj9c_8RuDg_GLhbLEOGjRVpTMHQMuMbRtuQ-VZ3X8iQ2YExYLj526LVyPCIR6i1WWzMPACKwXvUT2CEVsQI7dqNCW6T2DBTVzomo7Gr-xi02d87g2JolPd_asOjTTWgv8a83SSR9F2KwpDNyfhotWBVoqdFRlx-pAsNqJ-G2AApCKoD4M");
+        con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+        con.setRequestProperty("Content-Type", "application/json");
+
+        String urlParameters = "";
+
+
+
+        //发送Post请求
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        int responseCode = con.getResponseCode();
+        System.out.println("\nSending 'POST' request to URL : " + url);
+        System.out.println("Post parameters : " + urlParameters);
+        System.out.println("Response Code : " + responseCode);
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        //打印结果
+        System.out.println(response.toString());
+        return response.toString();
+    }
+
+
+
+    public static void trustAllHttpsCertificates() throws Exception {
+        TrustManager[] trustAllCerts = new TrustManager[1];
+        TrustManager tm = new miTM();
+        trustAllCerts[0] = tm;
+        SSLContext sc = SSLContext.getInstance("SSL");
+        sc.init(null, trustAllCerts, null);
+        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+    }
+
+    static class miTM implements TrustManager, X509TrustManager {
+        public X509Certificate[] getAcceptedIssuers() {
+            return null;
+        }
+
+        public boolean isServerTrusted(X509Certificate[] certs) {
+            return true;
+        }
+
+        public boolean isClientTrusted(X509Certificate[] certs) {
+            return true;
+        }
+
+        public void checkServerTrusted(X509Certificate[] certs, String authType)
+                throws CertificateException {
+            return;
+        }
+
+        public void checkClientTrusted(X509Certificate[] certs, String authType)
+                throws CertificateException {
+            return;
+        }
+    }
+
+    /**
+     * 忽略HTTPS请求的SSL证书，必须在openConnection之前调用
+     * @throws Exception
+     */
+    public static void ignoreSsl() throws Exception{
+        HostnameVerifier hv = new HostnameVerifier() {
+            public boolean verify(String urlHostName, SSLSession session) {
+                return true;
+            }
+        };
+        trustAllHttpsCertificates();
+        HttpsURLConnection.setDefaultHostnameVerifier(hv);
+    }
+
+
 }

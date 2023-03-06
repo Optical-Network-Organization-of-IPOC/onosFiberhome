@@ -24,6 +24,8 @@ import { ResourceComponent } from './roadm/components/resource/resource.componen
 import { AuxiliaryComponent } from './roadm/components/topology/auxiliary/auxiliary.component';
 import { VirtualComponent } from './roadm/components/topology/virtual/virtual.component';
 import { XinjiangComponent } from './roadm/components/topology/xinjiang/xinjiang.component';
+import { Fiberhome1Component } from './roadm/components/cloud/fiberhome1/fiberhome1.component';
+
 
 const appRoutes: Routes = [
     {
@@ -63,6 +65,10 @@ const appRoutes: Routes = [
                      {
                          path: 'application',
                          component: ApplicationComponent
+                     },
+                     {
+                         path: 'fiberhome1',
+                         component: Fiberhome1Component
                      },
                      {
                          path: 'resource',

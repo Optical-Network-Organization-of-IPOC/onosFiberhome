@@ -32,6 +32,7 @@ import { AuxiliaryComponent } from './roadm/components/topology/auxiliary/auxili
 import { VirtualComponent } from './roadm/components/topology/virtual/virtual.component';
 import { XinjiangComponent } from './roadm/components/topology/xinjiang/xinjiang.component';
 import { XinjiangdataService } from './roadm/services/xinjiangdata.service';
+import { Fiberhome1Component } from './roadm/components/cloud/fiberhome1/fiberhome1.component';
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import { XinjiangdataService } from './roadm/services/xinjiangdata.service';
         AuxiliaryComponent,
         VirtualComponent,
         XinjiangComponent,
+        Fiberhome1Component,
     ],
     imports: [
         RoadmRoutingModule,

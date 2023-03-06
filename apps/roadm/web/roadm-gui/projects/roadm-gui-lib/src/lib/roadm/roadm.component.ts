@@ -77,7 +77,9 @@ export class RoadmDeviceComponent extends TableBaseImpl implements OnInit, OnDes
     public picUrl5='https://pica.zhimg.com/80/v2-cc0723e48cd48e755e7cda0220df21ae_720w.jpg?source=d16d100b';
     public picUrl6='https://pic3.zhimg.com/80/v2-74026d6b34f82eb5ab4b504c2ec93ed1_720w.jpg?source=d16d100b';
     public picUrl7='https://pic1.zhimg.com/80/v2-cab6ca8b44b6dd126804e23fe013e8a7_720w.jpg?source=d16d100b';
-
+    public reveal1:boolean=false;
+    public reveal2:boolean=false;
+    public reveal3:boolean=false;
 
     constructor(
         protected fs: FnService,

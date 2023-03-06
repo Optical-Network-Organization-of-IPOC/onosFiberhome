@@ -87,9 +87,14 @@
             padding: 3px;
         }
 
-        table {
-            margin-top:20px;
+        #denglu {
+
             align:center;
+            width: 500px;
+            height: 300px;
+            border: 1px solid #bb51c3;
+            border-radius: 70px;
+            background-color: #519fc3;
         }
         input[type="submit"] {
             margin-top: 20px;
@@ -130,9 +135,9 @@
             align:center;
         }
         #title{
-            position:absolute;
-            margin-top: 320px;
-            margin-left: 630px;
+
+            margin-top: 35px;
+            margin-bottom: 35px;
             /* margin-right: auto; */
             align:center;
             color:white;
@@ -146,32 +151,35 @@
 <body background="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcz-video-photo.oss-cn-beijing.aliyuncs.com%2F20200508%2F69803d331c34a12de38e96bbca3627c3_00003.jpg&refer=http%3A%2F%2Fcz-video-photo.oss-cn-beijing.aliyuncs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1655002350&t=02ae07b0e0669703af779f3fb8d0349a"  style="background-repeat: no-repeat;background-size: 100% 100%; background-attachment: fixed;">
 
 <div align="center">
-    <div id="downbox" align="center"></div>
-    <div id="title" align="center" font-weight="2000" ><b>Multidimentional Resource Control</b></div>
+<!--    <div id="downbox" align="center"></div>-->
+
 <!--    Multidimentional Resource Control-->
     <img src="https://pic1.zhimg.com/80/v2-6a9d7ae6a58b0c147c66222024cd273b_720w.jpg?source=d16d100b" />
 
 
+    <div id="denglu">
+        <div id="title" align="center" font-weight="2000" ><b>Multidimentional Resource Control</b></div>
+        <form method="post" action="j_security_check">
 
-    <form method="post" action="j_security_check">
-
-        <table>
+            <table>
 
 
-            <tr>
-                <td><div style="color:whitesmoke;" font-weight=900; position="absolute";><b>User:</b></div></td>
-                <td><input id="username" name="j_username" type="text" autofocus/></td>
-            </tr>
-            <tr>
-                <td><div style="color:whitesmoke;" font-weight=900; position="absolute";><b>Password:</b></div> </td>
-                <td><input id="password" name="j_password" type="password"/></td>
-            </tr>
-            <tr>
-                <!-- <td colspan="2"><input id="submit" type="submit" value="Login "/></td></tr></br><div id="text">sign in to start your session</div></td> -->
-                <td colspan="2"><input id="submit" type="submit" value="Login "/><div style="color:black; "font-weight=700; align="center">  Sign in to start your session!</div></td>
-            </tr>
-        </table>
-    </form>
+                <tr>
+                    <td><div style="color:whitesmoke;" font-weight=900; position="absolute";><b>User:</b></div></td>
+                    <td><input id="username" name="j_username" type="text" autofocus/></td>
+                </tr>
+                <tr>
+                    <td><div style="color:whitesmoke;" font-weight=900; position="absolute";><b>Password:</b></div> </td>
+                    <td><input id="password" name="j_password" type="password"/></td>
+                </tr>
+                <tr>
+                    <!-- <td colspan="2"><input id="submit" type="submit" value="Login "/></td></tr></br><div id="text">sign in to start your session</div></td> -->
+                    <td colspan="2"><input id="submit" type="submit" value="Login "/><div style="color:black; "font-weight=700; align="center">  Sign in to start your session!</div></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
 </div>
 </body>
 </html>
