@@ -44,27 +44,24 @@
                 <hr>
             </div>
             <div class="content" id="content2">
-                <img src="data/img/logo2.png"/>
                 <table>
                     <thead>
                     <tr>
                         <th>名称</th>
-                        <th>CPU</th>
-                        <th>内存</th>
-                        <th>硬盘</th>
-                        <th>地址</th>
-                        <th>镜像</th>
                         <th>状态</th>
+                        <th>创建时间</th>
+                        <th>镜像</th>
+                        <th>可用域</th>
+                        <th>ID</th>
                     </tr>
                     </thead>
                     <tr *ngFor="let item of vmlist">
                         <td>{{item.name}}</td>
-                        <td>{{item.cpu}}</td>
-                        <td>{{item.memory}}</td>
-                        <td>{{item.disk}}</td>
-                        <td>{{item.ip}}</td>
-                        <td>{{item.image}}</td>
                         <td>{{item.status}}</td>
+                        <td>{{item.create_time}}</td>
+                        <td>{{item.image}}</td>
+                        <td>{{item.region}}</td>
+                        <td>{{item.id}}</td>
                     </tr>
 
                 </table>
@@ -82,24 +79,35 @@
                     <div id="creat_form">
                         <table>
                             <tr>
-                                <td>名称:<input type="text" id="Name" [(ngModel)]="creat_form.name"/></td>
-                                <td>CPU:<input type="text" id="Cpu" [(ngModel)]="creat_form.cpu"/></td>
+                                <td>名称: <input type="text" id="Name" placeholder="请输入虚拟机名称" [(ngModel)]="creat_form.name"/></td>
+                                <td><span>
+                      镜像:
+                      <select name="Mirror" id="Mirror" class="switch" [(ngModel)]="creat_form.image">
+                        <option value="" disabled selected>请选择镜像</option>
+                        <option [value]="item" *ngFor="let item of mirror_image">{{item}}</option>
+                      </select>
+                </span></td>
                             </tr>
                             <tr>
-                                <td>内存:<input type="text" id="Memory" [(ngModel)]="creat_form.memory"/></td>
-                                <td>硬盘:<input type="text" id="Disk" [(ngModel)]="creat_form.disk"/></td>
+                                <td><span>
+                      网段:
+                      <select name="net" id="net" class="switch" [(ngModel)]="creat_form.seg">
+                        <option value="" disabled selected>请选择网段</option>
+                        <option [value]="item" *ngFor="let item of segment">{{item}}</option>
+                      </select>
+                </span></td>
+                                <td><span>
+                      配置:
+                      <select name="config" id="config" class="switch" [(ngModel)]="creat_form.cfg">
+                        <option value="" disabled selected>请选择配置</option>
+                        <option [value]="item" *ngFor="let item of config">{{item}}</option>
+                      </select>
+                </span></td>
                             </tr>
                         </table>
                         <div class="content3_down">
-                <span>
-                      镜像:
-                      <select name="Mirror" id="Mirror" class="switch" [(ngModel)]="creat_form.image">
-                        <option [value]="item" *ngFor="let item of mirror_image">{{item}}</option>
-                      </select>
-                </span>
-                        </div>
-                        <div class="content3_down">
-                            <button id="establish_but" (click)="submit();">建立</button>
+                            <button id="establish_but" (click)="judge()">建立</button>
+                            <!--                <button id="establish_but" (click)="SendMessageToBackward();">建立</button>-->
                             <div class="clear"></div>
                         </div>
                     </div>
@@ -110,7 +118,7 @@
               <span>
                 选择虚拟机：
                 <select name="DeleteVm" id="DeleteVm" class="switch" [(ngModel)]="delete_vm">
-                  <option [value]="item" *ngFor="let item of delete_name_list">{{item}}</option>
+                  <option [value]="item" *ngFor="let item of delete_name_list;let i=index" (click)="choose(i)">{{item}}</option>
 
                 </select>
               </span>

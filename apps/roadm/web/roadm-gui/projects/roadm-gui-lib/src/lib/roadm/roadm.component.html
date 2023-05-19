@@ -71,8 +71,8 @@
             <div *ngIf="reveal1">
                 <ul class="sub_nav">
                     <li><a routerLink="topology"><span>虚拟仿真</span></a></li>
+                    <li><a routerLink="topology/simu"><span>虚拟仿真1</span></a></li>
                     <li><a routerLink="topology/auxiliary"><span>半实物仿真</span></a></li>
-                    <li><a routerLink="topology/xinjiang"><span>电力网络</span></a></li>
                 </ul>
             </div>
         </li>
@@ -83,19 +83,19 @@
             <div *ngIf="reveal2">
                 <ul class="sub_nav">
                     <li><a routerLink="fiberhome1"><span>烽火云 1</span></a></li>
-                    <li><a><span>烽火云 2</span></a></li>
-                    <li><a><span>华科云</span></a></li>
+                    <li><a routerLink="fiberhome2"><span>烽火云 2</span></a></li>
+                    <li><a routerLink="hust"><span>华科云</span></a></li>
                 </ul>
             </div>
         </li>
         <li class="nav">
             <div class="parent_nav">
-                <a href="#" (click)="reveal3=!reveal3;"><img [src]="picUrl4" alt="5" /><span>网资源</span></a>
+                <a (click)="reveal3=!reveal3;"><img [src]="picUrl4" alt="5" /><span>网资源</span></a>
             </div>
             <div *ngIf="reveal3">
                 <ul class="sub_nav">
-                    <li><a href="https://www.baidu.com/" target="_blank"><span>DCN</span></a></li>
-                    <li><a><span>DCI</span></a></li>
+                    <li><a routerLink="dcn"><span>DCN</span></a></li>
+                    <li><a routerLink="dci"><span>DCI</span></a></li>
                     <li><a><span>虚拟节点</span></a></li>
                 </ul>
             </div>

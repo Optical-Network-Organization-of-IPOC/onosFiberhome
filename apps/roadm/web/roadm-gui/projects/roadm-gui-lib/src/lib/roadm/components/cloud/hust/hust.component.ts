@@ -7,15 +7,12 @@ import {
     SortDir, TableBaseImpl, TableResponse
 } from 'gui2-fw-lib';
 declare var echarts:any;
-
 @Component({
-  selector: 'roadm-app-fiberhome1',
-  templateUrl: './fiberhome1.component.html',
-  styleUrls: ['./fiberhome1.component.css']
+  selector: 'roadm-app-hust',
+  templateUrl: './hust.component.html',
+  styleUrls: ['./hust.component.css']
 })
-export class Fiberhome1Component {
-
-  public pic3 = "https://pic4.zhimg.com/80/v2-207e1cf40966e6f3f18fd6558015de3f_720w.jpg";
+export class HustComponent {
   public option1:any;
   public option2:any;
   public option3:any;
@@ -60,6 +57,8 @@ export class Fiberhome1Component {
   choose(i:number){
   this.del_serial=i;
   console.log(this.del_serial);
+      this.del_id=this.vmlist[this.del_serial].id;
+      console.log(this.del_id);
   }
   reset(){
   this.vmlist=[];
@@ -89,8 +88,9 @@ export class Fiberhome1Component {
         this.delete_name_list.push(JSON.parse(JSON.stringify(carrier.name)));
     }
   }
-  this.storage.set('vmlist',this.vmlist);//装入服务
-  this.storage.set('namelist',this.delete_name_list);
+  this.storage.set('vmlist3',this.vmlist);//装入服务
+  this.storage.set('namelist3',this.delete_name_list);
+
   }
   test(){
   console.log('接收',this.receive);
@@ -100,45 +100,30 @@ export class Fiberhome1Component {
    this.recj = aq;
   console.log(this.recj.servers);
   this.setValue();//需要重置业务列表用this.reset()，正常添加用this.setValue()；注意这两个函数不同时运行
-   //this.reset();
+//   this.reset();
   }
   SendMessageToBackward(){
               if(this.wss.isConnected){
-                  this.wss.sendEvent('vmCreateRequest',{
-                  'name':this.creat_form.name,
-                  'imageRef':this.creat_form.image,
-                  'uuid':this.creat_form.seg,
-                  'flavorRef':this.creat_form.cfg,
+                  this.wss.sendEvent('vmCreateRequestH',{
+                  'name3':this.creat_form.name,
+                  'imageRef3':this.creat_form.image,
+                  'uuid3':this.creat_form.seg,
+                  'flavorRef3':this.creat_form.cfg,
                   });
                   this.log.info('websocket发送helloworld成功');
               }
   }
-  ReceiveMessageFromBackward(){
-        this.wss.bindHandlers(new Map<string,(data)=>void>([
-            ['hiResponse',(data)=>{
-                this.log.info(data);
-//                 this.receiveData.status = data['status'];
-//                 this.receiveData.u_name = data['user_name'];
-//                 this.receiveData.T_name = data['tenant_name'];
-//                 this.receiveData.time = data['creat_time'];
-                this.receive = data['receive message'];
-            }]
-        ]));
-        this.handlers.push('hiResponse');
-        this.SendMessageToBackward();
-        setTimeout(() => {this.test();},5000);
-  }
   SendDelete(){
                 if(this.wss.isConnected){
-                    this.wss.sendEvent('vmDeleteRequest',{
-                    'vm_id':this.del_id,
+                    this.wss.sendEvent('vmDeleteRequestH',{
+                    'id3':this.del_id,
                     });
-                    this.log.info('delete success');
+                    this.log.info('websocket发送helloworld成功');
                 }
   }
   receiveDelete(){
    this.wss.bindHandlers(new Map<string,(data)=>void>([
-              ['vmDeleteResponse',(data)=>{
+              ['vmDeleteResponseH',(data)=>{
                   this.log.info(data);
   //                 this.receiveData.status = data['status'];
   //                 this.receiveData.u_name = data['user_name'];
@@ -147,16 +132,32 @@ export class Fiberhome1Component {
                   this.receive = data['receive message'];
               }]
           ]));
-          this.handlers.push('vmDeleteResponse');
+          this.handlers.push('vmDeleteResponseH');
           this.SendDelete();
 
 
   }
+  ReceiveMessageFromBackward(){
+        this.wss.bindHandlers(new Map<string,(data)=>void>([
+            ['hiResponseH',(data)=>{
+                this.log.info(data);
+//                 this.receiveData.status = data['status'];
+//                 this.receiveData.u_name = data['user_name'];
+//                 this.receiveData.T_name = data['tenant_name'];
+//                 this.receiveData.time = data['creat_time'];
+                this.receive = data['receive message'];
+            }]
+        ]));
+        this.handlers.push('hiResponseH');
+        this.SendMessageToBackward();
+
+  }
+
   vmpush(){
       this.vmlist.push(JSON.parse(JSON.stringify(this.vm)));
-      this.storage.set('vmlist',this.vmlist);//装入服务
+      this.storage.set('vmlist3',this.vmlist);//装入服务
       this.delete_name_list.push(JSON.parse(JSON.stringify(this.vm.name)));
-      this.storage.set('namelist',this.delete_name_list);
+      this.storage.set('namelist3',this.delete_name_list);
 
   }
   judge(){
@@ -171,39 +172,32 @@ export class Fiberhome1Component {
     }else{this.submit();}
   }
   del() {
-    console.log("vmlist",this.vmlist);
-    console.log('serial',this.del_serial);
-            let series=this.del_serial;
-            this.del_id=this.vmlist[series].id;
-            this.SendDelete();
-         setTimeout(() => {this.del_detail();},2000);
-  }
-  del_detail(){
-      let del_v=this.delete_vm
-      console.log("shancuyuansu",this.delete_vm);
-      let index=-1
-      for(let i=0;i<this.vmlist.length;i++){
-          console.log(this.vmlist[i])
-          if(this.vmlist[i].name==del_v){
-              index=i
-          }
-      }
-      console.log("index",index);
-      if(index>-1){
-          this.vmlist.splice(index,1);
-          console.log(this.vmlist);
-          this.delete_name_list.splice(index,1);
-          this.storage.set('vmlist',this.vmlist);
-          this.storage.set('namelist',this.delete_name_list);
-      }
+    let del_v=this.delete_vm
+    console.log("shancuyuansu",this.delete_vm);
+    let index=-1
+    for(let i=0;i<this.vmlist.length;i++){
+        console.log(this.vmlist[i])
+        if(this.vmlist[i].name==del_v){
+            index=i
+        }
+    }
+    console.log("index",index);
+    if(index>-1){
+        this.vmlist.splice(index,1);
+        console.log(this.vmlist);
+        this.delete_name_list.splice(index,1);
+        this.storage.set('vmlist3',this.vmlist);
+        this.storage.set('namelist3',this.delete_name_list);
+    }
+     this.receiveDelete();
+   // window.location.reload();
 
-      window.location.reload();
   }
   clear(){
   this.vmlist=[]
   this.delete_name_list=[]
-  this.storage.set('vmlist',this.vmlist);
-  this.storage.set('namelist',this.delete_name_list);
+  this.storage.set('vmlist3',this.vmlist);
+  this.storage.set('namelist3',this.delete_name_list);
 
   }
   setValue() {
@@ -216,7 +210,7 @@ export class Fiberhome1Component {
 //             this.vm.ip="乱了";
             this.vm.image=uuu.image.id;
             this.vm.status=uuu.status;
-            this.storage.set('vm',this.vm);
+            this.storage.set('vm3',this.vm);
             this.vmpush();
             console.log("列表长度",this.vmlist.length);
     }
@@ -225,6 +219,8 @@ export class Fiberhome1Component {
   submit(){
 //   this.SendMessageToBackward();
     this.ReceiveMessageFromBackward();
+    setTimeout(() => {this.test();},5500);
+
   }
   testOSM(){
     console.log('接收',this.receive);
@@ -239,7 +235,7 @@ export class Fiberhome1Component {
   GetFitosMessage(){
                   if(this.wss.isConnected){
                       this.wss.sendEvent('helloworldRequest123',{
-                      "num_id":'2',
+                      "num_id":'1',
                       });
                       this.log.info('get success');
                   }
@@ -261,7 +257,7 @@ export class Fiberhome1Component {
 
   }
   ngOnInit() {
-   this.receiveFitosMessage();
+  this.receiveFitosMessage();
     let myChart1=echarts.init(document.getElementById('bar1'));
                   this.option1 = {
                       tooltip: {
@@ -379,18 +375,19 @@ export class Fiberhome1Component {
 
 
 
-    let list1=this.storage.get('vmlist')//导出服务
+    let list1=this.storage.get('vmlist3')//导出服务
         if(list1){
           this.vmlist=list1;
         }
-        let obj1=this.storage.get('vm')//导出服务
+        let obj1=this.storage.get('vm3')//导出服务
         if(obj1){
           this.vm=obj1;
         }
-        let name1=this.storage.get('namelist')
+        let name1=this.storage.get('namelist3')
         if(name1){
           this.delete_name_list=name1;
         }
 
   }
+
 }

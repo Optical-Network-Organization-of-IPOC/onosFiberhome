@@ -1,0 +1,1469 @@
+{
+    "devices" : {
+      "netconf:127.0.0.1:11001" : {
+        "basic" : {
+          "name":"transport1",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11001",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11002" : {
+        "basic" : {
+          "name":"transport2",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11002",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11003" : {
+        "basic" : {
+          "name":"transport3",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11003",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11004" : {
+        "basic" : {
+          "name":"transport4",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11004",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11005" : {
+        "basic" : {
+          "name":"transport5",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11005",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11006" : {
+        "basic" : {
+          "name":"transport6",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11006",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11007" : {
+        "basic" : {
+          "name":"transport7",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11007",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11008" : {
+        "basic" : {
+          "name":"transport8",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11008",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11009" : {
+        "basic" : {
+          "name":"transport9",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11009",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11010" : {
+        "basic" : {
+          "name":"transport10",
+          "driver":"cassini-ocnos-old"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11010",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11011" : {
+        "basic" : {
+          "name":"host1-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11011",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11012" : {
+        "basic" : {
+          "name":"host1-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11012",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11013" : {
+        "basic" : {
+          "name":"host1-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11013",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+      
+      "netconf:127.0.0.1:11021" : {
+        "basic" : {
+          "name":"host2-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11021",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11022" : {
+        "basic" : {
+          "name":"host2-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11022",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11023" : {
+        "basic" : {
+          "name":"host2-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11023",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+      
+      "netconf:127.0.0.1:11031" : {
+        "basic" : {
+          "name":"host3-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11031",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11032" : {
+        "basic" : {
+          "name":"host3-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11032",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11033" : {
+        "basic" : {
+          "name":"host3-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11033",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11041" : {
+        "basic" : {
+          "name":"host4-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11041",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11042" : {
+        "basic" : {
+          "name":"host4-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11042",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11043" : {
+        "basic" : {
+          "name":"host4-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11043",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+      
+      "netconf:127.0.0.1:11051" : {
+        "basic" : {
+          "name":"host5-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11051",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11052" : {
+        "basic" : {
+          "name":"host5-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11052",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11053" : {
+        "basic" : {
+          "name":"host5-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11053",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      
+      "netconf:127.0.0.1:11061" : {
+        "basic" : {
+          "name":"host6-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11061",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11062" : {
+        "basic" : {
+          "name":"host6-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11062",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11063" : {
+        "basic" : {
+          "name":"host6-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11063",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      
+      "netconf:127.0.0.1:11071" : {
+        "basic" : {
+          "name":"host7-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11071",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11072" : {
+        "basic" : {
+          "name":"host7-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11072",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11073" : {
+        "basic" : {
+          "name":"host7-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11073",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+    
+      "netconf:127.0.0.1:11081" : {
+        "basic" : {
+          "name":"host8-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11081",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11082" : {
+        "basic" : {
+          "name":"host8-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11082",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11083" : {
+        "basic" : {
+          "name":"host8-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11083",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      
+      "netconf:127.0.0.1:11091" : {
+        "basic" : {
+          "name":"host9-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11091",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11092" : {
+        "basic" : {
+          "name":"host9-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11092",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11093" : {
+        "basic" : {
+          "name":"host9-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11093",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      
+      "netconf:127.0.0.1:11101" : {
+        "basic" : {
+          "name":"host10-1",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11101",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11102" : {
+        "basic" : {
+          "name":"host10-2",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11102",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "netconf:127.0.0.1:11103" : {
+        "basic" : {
+          "name":"host10-3",
+          "driver":"cassini-ocnos"
+        },
+        "netconf" : {
+          "ip" : "127.0.0.1",
+          "port" : "11103",
+          "username" : "root",
+          "password" : "root",
+          "idle-timeout" : "0"
+        }
+      },
+
+      "rest:127.0.0.1:11211": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11211,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11212": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11212,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11213": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11213,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11214": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11214,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11215": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11215,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11216": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11216,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11221": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11221,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11222": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11222,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11223": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11223,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11224": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11224,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11225": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11225,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11226": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11226,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11231": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11231,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11232": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11232,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11233": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11233,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11234": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11234,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11235": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11235,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11236": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11236,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11241": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11241,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11242": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11242,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11243": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11243,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11244": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11244,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11245": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11245,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11246": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11246,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11251": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11251,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11252": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11252,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11253": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11253,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11254": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11254,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11255": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11255,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11256": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11256,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+
+      "rest:127.0.0.1:11261": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11261,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11262": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11262,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11263": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11263,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11264": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11264,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11265": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11265,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11266": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11266,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11271": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11271,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11272": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11272,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11273": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11273,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11274": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11274,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11275": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11275,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11276": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11276,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11281": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11281,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11282": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11282,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11283": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11283,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11284": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11284,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11285": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11285,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11286": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11286,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11291": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11291,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11292": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11292,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11293": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11293,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11294": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11294,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11295": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11295,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11296": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11296,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11201": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11201,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11202": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11202,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11203": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11203,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11204": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11204,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11205": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11205,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      },
+
+      "rest:127.0.0.1:11206": {
+        "rest": {
+          "ip": "127.0.0.1",
+          "port": 11206,
+          "protocol": "http",
+          "testUrl":"/restconf/data/tapi-common:context",
+          "manufacturer": "tapi-swagger",
+          "hwVersion": "0",
+          "swVersion": "2.1"
+        },
+        "basic": {
+          "driver": "ols"
+        }
+      }
+
+    }
+}

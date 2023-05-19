@@ -1,0 +1,184 @@
+<body>
+<div id="service_list">
+    <div class="div_title">
+        <img [src]="pic3"><p>业务列表</p>
+        <div class="clear"></div>
+        <hr>
+    </div>
+    <div id="div_list">
+        <div id="topbar">
+            <span>
+                <p>删除业务：</p>
+                <select name="dele" id="dele" class="panel" [(ngModel)]="delete_service">
+                    <option value="" disabled selected>请选择要删除的业务</option>
+                    <option [value]="item" *ngFor="let item of delete_name_list;let i=index" (click)="choose(i)">{{item}}</option>
+                </select>
+                <button id="del" (click)="SendDelete();">删除</button>
+            </span>
+            <button class="avi" (click)="reload()">刷新</button>
+            <button class="avi" (click)="initialize()">清空列表</button>
+            <div class="clear"></div>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>源网元</th>
+                <th>宿网元</th>
+                <th>源端口</th>
+                <th>宿端口</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <th>管理IP</th>
+            </tr>
+            </thead>
+            <tr *ngFor="let item of serviceList">
+                <td>{{item.name}}</td>
+                <td>{{item.s_ne}}</td>
+                <td>{{item.d_ne}}</td>
+                <td>{{item.s_port}}</td>
+                <td>{{item.d_port}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.create_time | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{item.manage_ip}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="service_create">
+    <div class="div_title">
+        <img [src]="pic3"><p>创建业务</p>
+        <div class="clear"></div>
+        <hr>
+    </div>
+    <div id="div_create">
+        <div id="config">
+            <p class="title">业务配置</p>
+            <div id="config_content">
+                <span>
+                    <p class="modulation">业务名称：</p>
+                    <input type="text" id="Name" class="panel" placeholder="请输入业务名称" [(ngModel)]="servicePanel.name"/>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <p class="modulation">业务类型：</p>
+                    <select name="ST" id="ST" class="panel" [(ngModel)]="servicePanel.type">
+                        <option value="" disabled selected>请选择业务类型</option>
+                        <option [value]="item" *ngFor="let item of service_type">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <p class="modulation">映射路径：</p>
+                    <select name="MP" id="Mp" class="panel" [(ngModel)]="servicePanel.path">
+                        <option value="" disabled selected>请选择映射路径</option>
+                        <option [value]="item" *ngFor="let item of map_path">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <p class="modulation">映射方式：</p>
+                    <select name="MW" id="MW" class="panel" [(ngModel)]="servicePanel.way">
+                        <option value="" disabled selected>请选择映射方式</option>
+                        <option [value]="item" *ngFor="let item of map_way">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+            </div>
+        </div>
+        <div id="service_port">
+            <p class="title">选择业务端口</p>
+            <div id="port_content">
+                <span>
+                    <p class="port">源网元：</p>
+                    <select name="SNE" id="SNE" class="panel" [(ngModel)]="servicePanel.s_ne">
+                        <option value="" disabled selected>请选择源网元</option>
+                        <option [value]="item" *ngFor="let item of ne_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <p class="port">宿网元：</p>
+                    <select name="DNE" id="DNE" class="panel" [(ngModel)]="servicePanel.d_ne">
+                        <option value="" disabled selected>请选择宿网元</option>
+                        <option [value]="item" *ngFor="let item of ne_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <p class="port">源端口：</p>
+                    <select name="SP" id="SP" class="panel" [(ngModel)]="servicePanel.s_port" *ngIf="servicePanel.s_ne == ''">
+                        <option value="" disabled selected>请选择源端口</option>
+                    </select>
+                    <select name="SP" id="SP1" class="panel" [(ngModel)]="servicePanel.s_port" *ngIf="servicePanel.s_ne == '78'">
+                        <option value="" disabled selected>请选择源端口</option>
+                        <option [value]="item" *ngFor="let item of port78_list">{{item}}</option>
+                    </select>
+                    <select name="SP" id="SP2" class="panel" [(ngModel)]="servicePanel.s_port" *ngIf="servicePanel.s_ne == '79'">
+                        <option value="" disabled selected>请选择源端口</option>
+                        <option [value]="item" *ngFor="let item of port79_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <p class="port">宿端口：</p>
+                    <select name="DP" id="DP" class="panel" [(ngModel)]="servicePanel.d_port" *ngIf="servicePanel.d_ne == ''">
+                        <option value="" disabled selected>请选择源端口</option>
+                    </select>
+                    <select name="DP" id="DP1" class="panel" [(ngModel)]="servicePanel.d_port" *ngIf="servicePanel.d_ne == '78'">
+                        <option value="" disabled selected>请选择源端口</option>
+                        <option [value]="item" *ngFor="let item of port78_list">{{item}}</option>
+                    </select>
+                    <select name="DP" id="DP2" class="panel" [(ngModel)]="servicePanel.d_port" *ngIf="servicePanel.d_ne == '79'">
+                        <option value="" disabled selected>请选择源端口</option>
+                        <option [value]="item" *ngFor="let item of port79_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <div id="divide">
+                    <hr class="hr0">
+                </div>
+                <span>
+                    <p class="modulation">调制格式：</p>
+                    <select name="MF" id="MF" class="panel" [(ngModel)]="servicePanel.mf">
+                        <option value="" disabled selected>请选择调制格式</option>
+                        <option [value]="item" *ngFor="let item of mf_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <div class="space"></div>
+                    <p>FEC：</p>
+                    <select name="FEC" id="FEC" class="panel" [(ngModel)]="servicePanel.fec">
+                        <option value="" disabled selected>请选择FEC</option>
+                        <option [value]="item" *ngFor="let item of fec_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+                <span>
+                    <div class="space1"></div>
+                    <p>波长：</p>
+                    <select name="wl" id="wl" class="panel" [(ngModel)]="servicePanel.wl">
+                        <option value="" disabled selected>请选择波长</option>
+                        <option [value]="item" *ngFor="let item of wl_list">{{item}}</option>
+                    </select>
+                    <div class="clear"></div>
+                </span>
+            </div>
+        </div>
+        <div id="submit">
+            <button (click)="judge();">创建业务</button>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

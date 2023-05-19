@@ -1,0 +1,106 @@
+body{
+overflow-y: auto;
+background-color: #dcdcdc;
+}
+
+#panel1,#panel2{
+    width:45%;
+    height:40%;
+    background-color:  #f8f8ff;
+    float:left;
+    margin:30px 0 0 30px;
+    border-radius: 10px;
+}
+.div_title{
+    height: 60px;
+    margin: 0px;
+}
+.div_title p{
+    float:left;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.div_title svg{
+    max-width: 20px;
+    float:left;
+    margin-top:25px;
+    margin-left:20px;
+    margin-bottom: 0px;
+}
+.div_title hr{
+    width:98%;
+    /*position: relative;*/
+    left: 0px;
+    margin-top: 0px;
+}
+.clear{
+    clear:both;
+}
+#part11{
+    width: 58%;
+    height:80%;
+    float:left;/*居中*/
+    margin:0;/*居中*/
+
+    overflow-y: auto;
+}
+#defend,#wlan,#switch,#server{
+width: 42%;
+height:40%;
+margin: 0px 0px 0px 15px;
+float:left;
+}
+.con_p{
+    float:left;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.con_img{
+    max-width: 20px;
+    float:left;
+    margin-top:25px;
+    margin-left:20px;
+    margin-bottom: 0px;
+}
+.led{
+width:100px;
+align: right;
+margin:0 auto;
+font-size:50px;
+
+}
+#part12{
+    width: 40%;
+    height:80%;
+    float:left;/*居中*/
+    margin:0;/*居中*/
+
+    overflow-y: auto;
+}
+#part12 p{
+text-align: center;
+margin:0 auto;
+}
+#chart1{
+width:100%;
+height:85%;
+}
+#part2,#part3{
+width:100%;
+height:80%;
+}
+#part21,#part22{
+width:50%;
+height:100%;
+float:left;
+margin:0;
+}
+
+#panel3{
+    width:calc(90% + 30px);
+    height:40%;
+    background-color:  #f8f8ff;
+    float:left;
+    margin:30px 0 0 30px;
+    border-radius: 10px;
+}

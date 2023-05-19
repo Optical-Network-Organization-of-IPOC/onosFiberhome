@@ -25,7 +25,11 @@ import { AuxiliaryComponent } from './roadm/components/topology/auxiliary/auxili
 import { VirtualComponent } from './roadm/components/topology/virtual/virtual.component';
 import { XinjiangComponent } from './roadm/components/topology/xinjiang/xinjiang.component';
 import { Fiberhome1Component } from './roadm/components/cloud/fiberhome1/fiberhome1.component';
-
+import { DciComponent } from './roadm/components/network/dci/dci.component';
+import { SimuComponent } from './roadm/components/topology/simu/simu.component';
+import { DcnComponent } from './roadm/components/network/dcn/dcn.component';
+import { Fiberhome2Component } from './roadm/components/cloud/fiberhome2/fiberhome2.component';
+import { HustComponent } from './roadm/components/cloud/hust/hust.component';
 
 const appRoutes: Routes = [
     {
@@ -49,6 +53,10 @@ const appRoutes: Routes = [
                                 component: VirtualComponent
                             },
                             {
+                                path: 'simu',
+                                component: SimuComponent
+                            },
+                            {
                                 path: 'auxiliary',
                                 component: AuxiliaryComponent
                             },
@@ -69,6 +77,22 @@ const appRoutes: Routes = [
                      {
                          path: 'fiberhome1',
                          component: Fiberhome1Component
+                     },
+                     {
+                         path: 'fiberhome2',
+                         component: Fiberhome2Component
+                     },
+                     {
+                         path: 'hust',
+                         component: HustComponent
+                     },
+                     {
+                         path: 'dci',
+                         component: DciComponent
+                     },
+                     {
+                         path: 'dcn',
+                         component: DcnComponent
                      },
                      {
                          path: 'resource',
